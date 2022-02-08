@@ -1,6 +1,6 @@
 package com.company.list;
 import java.util.*;
-public class ExemploList1 {
+public class ExemploList {
     public static void main(String[] args) {
         /*
                         ALGUMAS FORMAS DE INICIALIZAR UMA LISTA
@@ -19,12 +19,9 @@ public class ExemploList1 {
         -----------------------------------------------------------------------------------------
         List<Double> notas = List.of(7d, 8.5, 9.3, 5d, 7d, 0d, 3.6); // a lista se torna imutável
         -----------------------------------------------------------------------------------------
-                                                EXERCICIO
-        Crie  uma lista com 7 notas de um aluno [7, 8.5, 9.3, 5, 7, 0, 3.6], faça:
-        System.out.println("Crie uma lista e adicione as sete notas: ");
+        */
 
-         */
-
+        System.out.println("Crie uma lista e adicione as sete notas: [7, 8.5, 9.3, 5, 7, 0, 3.6] ");
         List<Double> notas = new ArrayList<Double>(); //Generics(jdk 5) - Diamond Operator(jdk 7)
         notas.add(7.0);
         notas.add(8.5);
@@ -33,6 +30,7 @@ public class ExemploList1 {
         notas.add(7.0);
         notas.add(0.0);
         notas.add(3.6);
+        System.out.println(notas);
         System.out.println(notas.toString());
 
         System.out.println("Exiba a posição da nota 5.0: " + notas.indexOf(5d));
@@ -47,8 +45,9 @@ public class ExemploList1 {
 
         System.out.println("Confira se a nota 5.0 está na lista: " + notas.contains(5d));
 
-        /*System.out.println("Exiba todas as notas na ordem em que foram informados: ");
-        for (Double nota : notas) System.out.println(nota);*/
+        System.out.println("Exiba todas as notas na ordem em que foram informados: ");
+        // como é List, a ordem de inserção dos elementos são mantidos.
+        for (Double nota : notas) System.out.println(nota); //ForEach
 
         System.out.println("Exiba a terceira nota adicionada: " + notas.get(2));
         System.out.println(notas.toString());
@@ -57,9 +56,10 @@ public class ExemploList1 {
 
         System.out.println("Exiba a maior nota: " + Collections.max(notas));
 
+        System.out.println("Exiba a soma dos valores: ");
         Iterator<Double> iterator = notas.iterator();
         Double soma = 0d;
-        while(iterator.hasNext()){
+        while(iterator.hasNext()){ // quando não houver mais proximos elementos, torna-se false e encerra o while
             Double next = iterator.next();
             soma += next;
         }
@@ -68,7 +68,7 @@ public class ExemploList1 {
         System.out.println("Exiba a média das notas: " + (soma/notas.size()));
 
         System.out.println("Remova a nota 0: ");
-        notas.remove(0d);
+        notas.remove(0d); // precisa especificar o double, caso fique int irá remover o elemento daquele indice
         System.out.println(notas);
 
         System.out.println("Remova a nota da posição 0");
@@ -89,13 +89,7 @@ public class ExemploList1 {
         */
         System.out.println("Confira se a lista está vazia: " + notas.isEmpty());
 
-/*
-Para você: Resolva esses exercícios utilizando os métodos da implementação LinkedList:
-        System.out.println("Crie uma lista chamada notas2 " +
-                "e coloque todos os elementos da list Arraylist nessa nova lista: ");
-        System.out.println("Mostre a primeira nota da nova lista sem removê-lo: ");
-        System.out.println("Mostre a primeira nota da nova lista removendo-o: ");
-*/
+
 
     }
 
