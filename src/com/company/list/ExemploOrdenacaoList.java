@@ -22,7 +22,7 @@ public class ExemploOrdenacaoList {
             add(new Gato("Jon", 18, "amarelo"));
         }};
         meusGatos.sort(Comparator.comparing(Gato::getNome));
-
+        System.out.println(meusGatos);
 
         System.out.println("--\tOrdem de Inserção\t---");
         System.out.println(meusGatos);
@@ -106,6 +106,9 @@ class ComparatorCor implements Comparator<Gato> {
 }
 
 class ComparatorNomeCorIdade implements Comparator<Gato> {
+    /* o primeiro elemento como criterio de ordenação será o nome, em caso de empate no nome
+    o próximo criterio será a cor e se continuar, desempata com idade
+     */
 
     @Override
     public int compare(Gato g1, Gato g2) {

@@ -1,6 +1,6 @@
 package com.company.list;
 
-public class ExemploLinkedList {
+public class ExercicioLinkedList {
     public static void main(String[] args) {
         /*
 Para você: Resolva esses exercícios utilizando os métodos da implementação LinkedList:
